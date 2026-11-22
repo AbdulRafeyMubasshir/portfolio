@@ -1,0 +1,116 @@
+:root {
+  --bg: #f4f6f5;
+  --surface: #ffffff;
+  --ink: #0f2a23;
+  --body: #3d4f49;
+  --muted: #6b7c76;
+  --rule: #d3dcd8;
+  --signal: #e5a00d;
+  --enamel: #1e6b57;
+
+  --font: "Overpass Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.3rem;
+  --step-2: 1.7rem;
+  --step-3: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem);
+
+  --measure: 46rem;
+  --rail: 13rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--body);
+  font-family: var(--font);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-color: var(--signal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 3px;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  z-index: 10;
+}
+
+.skip:focus {
+  top: 1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

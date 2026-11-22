@@ -1,0 +1,31 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.name {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ink);
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--body);
+}
+
+.list li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

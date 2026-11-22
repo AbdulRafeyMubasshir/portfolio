@@ -1,0 +1,92 @@
+.shell {
+  display: grid;
+  grid-template-columns: var(--rail) minmax(0, var(--measure));
+  gap: 0 clamp(2rem, 5vw, 5rem);
+  padding: 0 clamp(1.25rem, 4vw, 4rem);
+  max-width: calc(var(--rail) + var(--measure) + 13rem);
+}
+
+.side {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+}
+
+.name {
+  font-weight: 800;
+  color: var(--ink);
+  font-size: var(--step-0);
+  margin-bottom: 2rem;
+}
+
+.main {
+  padding: 3rem 0 6rem;
+}
+
+.hero {
+  display: grid;
+  gap: 1.75rem;
+  padding-bottom: 2.5rem;
+}
+
+.headline {
+  font-size: var(--step-3);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+}
+
+.section,
+.contact {
+  padding: 4rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.heading {
+  font-size: var(--step-2);
+  font-weight: 800;
+  margin-bottom: 1.75rem;
+}
+
+.contactLead {
+  max-width: 36rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact {
+  min-height: 70vh;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+  font-size: var(--step-1);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .side {
+    position: static;
+    height: auto;
+    padding-top: 1.5rem;
+  }
+  .side nav {
+    display: none;
+  }
+  .name {
+    margin-bottom: 0;
+  }
+  .main {
+    padding-top: 2rem;
+  }
+}
