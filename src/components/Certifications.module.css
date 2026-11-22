@@ -1,0 +1,41 @@
+.wrap {
+  margin-top: 3rem;
+}
+
+.heading {
+  font-size: var(--step-1);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0 2rem;
+  border-top: 2px solid var(--ink);
+}
+
+.list li {
+  display: grid;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.name {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.issuer {
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+
+.note {
+  margin-top: 0.9rem;
+  font-size: var(--step--1);
+  color: var(--muted);
+}

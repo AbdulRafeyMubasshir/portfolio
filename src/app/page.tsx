@@ -1,4 +1,5 @@
 import { CaseStudy } from "@/components/CaseStudy";
+import { Certifications } from "@/components/Certifications";
 import { Facts } from "@/components/Facts";
 import { HeroIntro } from "@/components/HeroIntro";
 import { LensSwitch } from "@/components/LensSwitch";
@@ -69,6 +70,7 @@ export default async function Home({ searchParams }: PageProps) {
               Experience
             </h2>
             <Timeline />
+            <Certifications />
           </section>
 
           <section id="skills" className={styles.section} aria-labelledby="skills-heading">

@@ -1,4 +1,13 @@
-import { DEFAULT_LENS, LENSES, factsByLens, hero, parseLens, berry, tube } from "@/content/site";
+import {
+  certifications,
+  DEFAULT_LENS,
+  LENSES,
+  factsByLens,
+  hero,
+  parseLens,
+  berry,
+  tube,
+} from "@/content/site";
 
 describe("parseLens", () => {
   it.each(LENSES)("accepts %s", (lens) => expect(parseLens(lens)).toBe(lens));
@@ -24,4 +33,9 @@ describe("content", () => {
     expect(factsByLens.solutions[0]!.id).toBe("deal");
     expect(factsByLens.delivery[0]!.id).toBe("workers");
   });
+});
+
+it("lists the three Salesforce certifications and the deep learning course", () => {
+  expect(certifications.filter((c) => c.issuer === "Salesforce")).toHaveLength(3);
+  expect(certifications.some((c) => c.name.includes("Deep Learning"))).toBe(true);
 });

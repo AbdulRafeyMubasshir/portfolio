@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "@fontsource-variable/overpass";
 import "./globals.css";
-import { person } from "@/content/site";
+import { certifications, person } from "@/content/site";
 
 const description =
   "Rafey Mohammed builds software for customers and sees it through: engineering, selling and delivering B2B products in London.";
@@ -28,6 +28,11 @@ const personJsonLd = {
   jobTitle: "Software engineer",
   address: { "@type": "PostalAddress", addressLocality: person.location, addressCountry: "GB" },
   sameAs: [person.linkedin, person.github],
+  hasCredential: certifications.map((c) => ({
+    "@type": "EducationalOccupationalCredential",
+    name: c.name,
+    recognizedBy: { "@type": "Organization", name: c.issuer },
+  })),
   alumniOf: { "@type": "CollegeOrUniversity", name: "University of Westminster" },
 };
 

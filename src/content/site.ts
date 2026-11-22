@@ -231,3 +231,15 @@ export const skills: SkillGroup[] = [
     ],
   },
 ];
+
+export interface Certification {
+  name: string;
+  issuer: string;
+}
+
+export const certifications: Certification[] = [
+  { name: "Salesforce Certified Administrator", issuer: "Salesforce" },
+  { name: "Salesforce Certified Platform Developer I", issuer: "Salesforce" },
+  { name: "Salesforce Certified Platform App Builder", issuer: "Salesforce" },
+  { name: "Deep Learning Specialization", issuer: "DeepLearning.AI on Coursera" },
+];
