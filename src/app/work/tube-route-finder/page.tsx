@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Flow } from "@/components/Flow";
 import { TubeLoop } from "@/components/Media";
 import { WorkPage } from "@/components/WorkPage";
 import { tube } from "@/content/site";
@@ -29,6 +30,32 @@ export default function TubeCaseStudy() {
         planner the way production journey planners work, on real timetables, and to engineer it to
         a standard I’d put in front of a client.
       </p>
+
+      <h2>How it fits together</h2>
+      <Flow
+        label="How timetable data becomes a journey in the route finder"
+        stages={[
+          {
+            title: "TfL timetables",
+            items: ["Underground, DLR, Overground and Elizabeth line", "About 25,000 departures"],
+          },
+          {
+            title: "Data pipeline",
+            items: [
+              "Reproducible build of a compact timetable",
+              "Refreshed automatically every week",
+            ],
+          },
+          {
+            title: "In the browser",
+            items: ["RAPTOR answers a query in 0.34 ms", "Installable app that works offline"],
+          },
+          {
+            title: "Live status",
+            items: ["Edge function reads TfL line status", "Journeys reroute around closures"],
+          },
+        ]}
+      />
 
       <h2>What’s inside</h2>
       <ul>

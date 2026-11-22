@@ -27,7 +27,32 @@ export const person = {
   linkedin: "https://www.linkedin.com/in/mohammed-abdul-rafey-mubasshir/",
   github: "https://github.com/AbdulRafeyMubasshir",
   url: "https://rafey-mohammed.vercel.app",
+  /**
+   * Path of your CV in /public, e.g. "/Rafey-Mohammed-CV.pdf".
+   * Leave null to hide the Download CV links.
+   */
+  cv: null as string | null,
 };
+
+/** One-line credibility, shown under the headline numbers. */
+export const credentials: { role: string; name: string }[] = [
+  { role: "Client", name: "Berry Recruitment Group" },
+  { role: "Previously", name: "Deloitte" },
+  { role: "MSc", name: "University of Westminster" },
+  { role: "Certified", name: "Salesforce, three times" },
+];
+
+export interface Testimonial {
+  quote: string;
+  name: string;
+  title: string;
+}
+
+/**
+ * A real quote from the client, used with their permission. Leave null to
+ * hide the testimonial on the Berry pages. Never paraphrase or invent one.
+ */
+export const berryTestimonial: Testimonial | null = null;
 
 export const hero = {
   headline: "I build software for customers, and see it through.",

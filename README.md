@@ -46,3 +46,8 @@ npm run ci       # lint, format check, typecheck, tests and build
 ## Editing content
 
 All copy is in [`src/content/site.ts`](src/content/site.ts). Media is in `public/media`.
+
+Two optional pieces stay hidden until they're filled in:
+
+- **CV download:** put the PDF in `public/` (for example `public/Rafey-Mohammed-CV.pdf`) and set `person.cv` to `"/Rafey-Mohammed-CV.pdf"`.
+- **Client testimonial:** set `berryTestimonial` to a real quote, with the person's name and title, used with their permission.

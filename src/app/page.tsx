@@ -1,9 +1,10 @@
 import { CaseStudy } from "@/components/CaseStudy";
 import { Certifications } from "@/components/Certifications";
+import { Credentials } from "@/components/Credentials";
 import { Facts } from "@/components/Facts";
 import { HeroIntro } from "@/components/HeroIntro";
 import { LensSwitch } from "@/components/LensSwitch";
-import { BerryVideo, TubeLoop } from "@/components/Media";
+import { BerryHeroLoop, BerryVideo, TubeLoop } from "@/components/Media";
 import { RailNav, type Station } from "@/components/RailNav";
 import { Skills } from "@/components/Skills";
 import { Timeline } from "@/components/Timeline";
@@ -39,12 +40,20 @@ export default async function Home({ searchParams }: PageProps) {
 
         <main id="main" className={styles.main}>
           <section id="intro" className={styles.hero} aria-labelledby="headline">
-            <h1 id="headline" className={styles.headline}>
-              {hero.headline}
-            </h1>
-            <HeroIntro />
-            <LensSwitch />
-            <Facts />
+            <div className={styles.heroText}>
+              <h1 id="headline" className={styles.headline}>
+                {hero.headline}
+              </h1>
+              <HeroIntro />
+            </div>
+            <div className={styles.heroMedia}>
+              <BerryHeroLoop />
+            </div>
+            <div className={styles.heroProof}>
+              <LensSwitch />
+              <Facts />
+              <Credentials />
+            </div>
           </section>
 
           <section id="berry" className={styles.section} aria-labelledby="berry-heading">
@@ -98,6 +107,13 @@ export default async function Home({ searchParams }: PageProps) {
               <li>
                 <a href={person.github}>GitHub</a>
               </li>
+              {person.cv && (
+                <li>
+                  <a href={person.cv} download>
+                    Download CV
+                  </a>
+                </li>
+              )}
             </ul>
           </section>
         </main>

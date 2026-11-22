@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { BerryVideo } from "@/components/Media";
+import { Flow } from "@/components/Flow";
+import { Testimonial } from "@/components/Testimonial";
 import { Still, WorkPage } from "@/components/WorkPage";
-import { berry } from "@/content/site";
+import { berry, berryTestimonial } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Berry Recruitment Group case study",
@@ -21,6 +23,7 @@ export default function BerryCaseStudy() {
   return (
     <WorkPage study={berry} glance={glance}>
       <BerryVideo />
+      <Testimonial data={berryTestimonial} />
 
       <h2>The problem</h2>
       <p>
@@ -64,7 +67,46 @@ export default function BerryCaseStudy() {
         </li>
       </ol>
 
-      <h2>How it works</h2>
+      <h2>How it fits together</h2>
+      <Flow
+        label="How data moves through the Berry platform"
+        stages={[
+          {
+            title: "Private portals",
+            items: [
+              "Each worker gets a link to submit weekly availability",
+              "Supervisors submit rotas the same way",
+            ],
+          },
+          {
+            title: "Supabase and PostgreSQL",
+            items: [
+              "Row-level security on every table",
+              "Role-based access for planners and supervisors",
+              "Audit trail of every change",
+            ],
+          },
+          {
+            title: "Auto-scheduler",
+            items: [
+              "Matches availability to station cover",
+              "Respects certifications and rest periods",
+              "Lists anything it can’t fill",
+            ],
+          },
+          {
+            title: "Four planners",
+            items: [
+              "Shift, SIA, ATP and Dispatch",
+              "Review and adjust by hand",
+              "Export to Excel or PDF",
+            ],
+          },
+        ]}
+        note="Built on Next.js and Node.js, deployed on Vercel."
+      />
+
+      <h2>The product, step by step</h2>
       <Still
         src="/media/berry-s-workers.webp"
         alt="Workers screen listing each worker with the stations they can cover"

@@ -10,7 +10,7 @@ export function HeroIntro() {
     <p
       data-testid="hero-intro"
       aria-live="polite"
-      style={{ fontSize: "var(--step-1)", maxWidth: "38rem" }}
+      style={{ fontSize: "var(--step-1)", maxWidth: "34rem" }}
     >
       {hero.intro[lens]}
     </p>
